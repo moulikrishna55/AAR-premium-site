@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO META -->
+  <title>AAR InfraTech | Best Construction Company in Hyderabad</title>
+  <meta name="description" content="AAR InfraTech is a leading construction company in Hyderabad offering residential, commercial, and modern smart building solutions.">
+  <meta name="keywords" content="construction company Hyderabad, builders in Hyderabad, AAR InfraTech, home construction Hyderabad, commercial builders">
+  <meta name="author" content="ANIL RAJU ANIPE">
+
+  <!-- Open Graph (for sharing) -->
+  <meta property="og:title" content="AAR InfraTech">
+  <meta property="og:description" content="Building Tomorrow, Today">
+  <meta property="og:type" content="website">
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: 'Poppins', sans-serif;
+      color: #e6f7ff;
+      background: #050607;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #07101c 0%, #040507 45%, #000 100%);
+      color: #e6f7ff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 8, 15, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-name {
+      font-family: 'Orbitron', sans-serif;
+      color: #43d9ff;
+      font-size: 1.3rem;
+      letter-spacing: 0.12rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: #c7e9ff;
+      font-size: 0.96rem;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    nav a:hover {
+      color: #67ebff;
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      min-height: calc(100vh - 96px);
+      display: grid;
+      place-items: center;
+      padding: 120px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(67, 217, 255, 0.12), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 900px;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(3rem, 4vw, 4.5rem);
+      color: #74f0ff;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: #d6efff;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 34px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #2ec7ff, #00a6ff);
+      color: #050707;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 18px 40px rgba(0, 166, 255, 0.15);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 48px rgba(0, 166, 255, 0.2);
+    }
+
+    .section {
+      padding: 84px 24px;
+    }
+
+    .section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+      color: #e8fbff;
+    }
+
+    .section p {
+      color: #b8dbe8;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .card {
+      background: rgba(6, 18, 30, 0.92);
+      border: 1px solid rgba(67, 217, 255, 0.12);
+      padding: 28px;
+      border-radius: 24px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      min-height: 170px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(67, 217, 255, 0.3);
+    }
+
+    .gallery {
+      margin-top: 32px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 24px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+    }
+
+    .form {
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+      margin-top: 32px;
+    }
+
+    .form input,
+    .form textarea {
+      width: 100%;
+      max-width: 640px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(8, 18, 28, 0.94);
+      color: #e6f7ff;
+    }
+
+    .form input:focus,
+    .form textarea:focus {
+      outline: none;
+      border-color: rgba(67, 217, 255, 0.55);
+      box-shadow: 0 0 0 3px rgba(67, 217, 255, 0.12);
+    }
+
+    .contact-details {
+      margin-top: 24px;
+      display: grid;
+      gap: 12px;
+      color: #c7e9ff;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 18px 32px rgba(37, 211, 102, 0.25);
+      z-index: 10;
+    }
+
+    footer {
+      padding: 28px 24px;
+      text-align: center;
+      color: #7caec0;
+      background: rgba(2, 8, 15, 0.92);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      nav {
+        justify-content: center;
+      }
+      .hero {
+        padding-top: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="logo-mark">
+        <svg width="42" height="42" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#00f7ff"/>
+              <stop offset="100%" stop-color="#15c5ff"/>
+            </linearGradient>
+          </defs>
+          <polygon points="26,102 60,18 94,102" fill="none" stroke="url(#logo-grad)" stroke-width="8" stroke-linejoin="round"/>
+          <rect x="62" y="52" width="30" height="20" fill="none" stroke="url(#logo-grad)" stroke-width="8"/>
+          <rect x="62" y="74" width="30" height="18" fill="none" stroke="url(#logo-grad)" stroke-width="8"/>
+          <line x1="38" y1="84" x2="82" y2="84" stroke="url(#logo-grad)" stroke-width="6"/>
+        </svg>
+      </span>
+      <span class="brand-name">AAR InfraTech</span>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <p style="color:#67ebff;font-weight:700;letter-spacing:0.24rem;text-transform:uppercase;margin-bottom:18px;">AAR InfraTech</p>
+    <h2>Engineering the future of Hyderabad infrastructure</h2>
+    <p>Delivering premium commercial, residential, and smart infrastructure projects with precision engineering and sustainable execution.</p>
+    <button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Request a Consultation</button>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">Residential Construction</div>
+    <div class="card">Commercial Projects</div>
+    <div class="card">Interior & Smart Design</div>
+    <div class="card">Renovation & Remodeling</div>
+  </div>
+</section>
+
+<section id="gallery" class="section gallery">
+  <h2>Our Projects</h2>
+  <div class="cards">
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" />
+    <img src="https://images.unsplash.com/photo-1505842465776-3d90f616310d" />
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" />
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>Founded by ANIL RAJU ANIPE, AAR InfraTech is redefining construction in Hyderabad with modern technology, sustainable practices, and futuristic designs.</p>
+</section>
+
+<section id="contact" class="section">
+  <h2>Get in Touch</h2>
+  <form class="form" onsubmit="sendToWhatsApp(event)">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <textarea id="message" placeholder="Your Message" rows="5"></textarea><br>
+    <button class="btn">Send Message</button>
+  </form>
+  <p>Owner: ANIL RAJU ANIPE</p>
+  <p>Phone: +91 9100320063</p>
+  <p>Location: Hyderabad, India</p>
+</section>
+
+<a class="whatsapp" href="https://wa.me/919100320063" target="_blank">WhatsApp</a>
+
+<footer>
+  <p>© 2026 AAR InfraTech. All rights reserved.</p>
+</footer>
+
+<script>
+function sendToWhatsApp(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  const text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+  window.open(`https://wa.me/919100320063?text=${text}`, '_blank');
+}
+</script>
+
+</body>
+</html>
