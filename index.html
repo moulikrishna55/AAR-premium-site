@@ -18,112 +18,246 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
+    :root {
+      color-scheme: dark;
       font-family: 'Poppins', sans-serif;
-      background: #0a0a0a;
-      color: #fff;
+      color: #e6f7ff;
+      background: #050607;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #07101c 0%, #040507 45%, #000 100%);
+      color: #e6f7ff;
+      line-height: 1.6;
       scroll-behavior: smooth;
     }
 
-    header {
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0,0,0,0.85);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    header h1 {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 8, 15, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-name {
       font-family: 'Orbitron', sans-serif;
-      color: #00f7ff;
+      color: #43d9ff;
+      font-size: 1.3rem;
+      letter-spacing: 0.12rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      transition: color 0.3s;
+      color: #c7e9ff;
+      font-size: 0.96rem;
+      transition: color 0.25s ease, transform 0.25s ease;
     }
 
     nav a:hover {
-      color: #00f7ff;
+      color: #67ebff;
+      transform: translateY(-1px);
     }
 
     .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      min-height: calc(100vh - 96px);
+      display: grid;
+      place-items: center;
+      padding: 120px 24px 80px;
       text-align: center;
-      background: radial-gradient(circle at center, #111, #000);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(67, 217, 255, 0.12), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 900px;
+      z-index: 1;
     }
 
     .hero h2 {
-      font-size: 3.5rem;
-      color: #00f7ff;
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(3rem, 4vw, 4.5rem);
+      color: #74f0ff;
+      margin-bottom: 18px;
     }
 
     .hero p {
-      max-width: 600px;
-      margin: 20px 0;
+      font-size: 1.05rem;
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: #d6efff;
     }
 
     .btn {
-      padding: 14px 35px;
-      background: #00f7ff;
-      color: #000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 34px;
+      border-radius: 999px;
       border: none;
+      background: linear-gradient(135deg, #2ec7ff, #00a6ff);
+      color: #050707;
+      font-weight: 700;
       cursor: pointer;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 18px 40px rgba(0, 166, 255, 0.15);
     }
 
     .btn:hover {
-      transform: scale(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 22px 48px rgba(0, 166, 255, 0.2);
     }
 
     .section {
-      padding: 70px 20px;
-      text-align: center;
+      padding: 84px 24px;
+    }
+
+    .section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 18px;
+      color: #e8fbff;
+    }
+
+    .section p {
+      color: #b8dbe8;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      gap: 22px;
+      margin-top: 34px;
     }
 
     .card {
-      background: #111;
-      padding: 25px;
-      border-radius: 15px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: rgba(6, 18, 30, 0.92);
+      border: 1px solid rgba(67, 217, 255, 0.12);
+      padding: 28px;
+      border-radius: 24px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      min-height: 170px;
     }
 
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 0 20px #00f7ff44;
+      border-color: rgba(67, 217, 255, 0.3);
     }
 
-    .gallery img {
+    .card-icon {
+      font-size: 2.3rem;
+      margin-bottom: 16px;
+      display: inline-flex;
+    }
+
+    .gallery {
+      margin-top: 32px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 24px;
+    }
+
+    .gallery-grid img {
       width: 100%;
-      border-radius: 10px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
     }
 
-    .form input, .form textarea {
-      width: 90%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: none;
+    .form {
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+      margin-top: 32px;
+    }
+
+    .form input,
+    .form textarea {
+      width: 100%;
+      max-width: 640px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(8, 18, 28, 0.94);
+      color: #e6f7ff;
+    }
+
+    .form input:focus,
+    .form textarea:focus {
+      outline: none;
+      border-color: rgba(67, 217, 255, 0.55);
+      box-shadow: 0 0 0 3px rgba(67, 217, 255, 0.12);
+    }
+
+    .contact-details {
+      margin-top: 24px;
+      display: grid;
+      gap: 12px;
+      color: #c7e9ff;
     }
 
     .whatsapp {
@@ -133,50 +267,73 @@
       background: #25D366;
       color: #fff;
       padding: 15px 20px;
-      border-radius: 50px;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      box-shadow: 0 18px 32px rgba(37, 211, 102, 0.25);
+      z-index: 10;
     }
 
     footer {
-      padding: 20px;
+      padding: 28px 24px;
       text-align: center;
-      background: #000;
+      color: #7caec0;
+      background: rgba(2, 8, 15, 0.92);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      nav {
+        justify-content: center;
+      }
+      .hero {
+        padding-top: 100px;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div style="display:flex;align-items:center;gap:12px;">
-    <!-- Futuristic SVG Logo -->
-    <svg width="48" height="48" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#00f7ff"/>
-          <stop offset="100%" stop-color="#15c5ff"/>
-        </linearGradient>
-      </defs>
-      <polygon points="20,100 60,15 100,100" fill="none" stroke="url(#logo-grad)" stroke-width="8" stroke-linejoin="round"/>
-      <path d="M60 30 L60 100" stroke="url(#logo-grad)" stroke-width="8"/>
-      <rect x="62" y="52" width="30" height="20" fill="none" stroke="url(#logo-grad)" stroke-width="8"/>
-      <rect x="62" y="74" width="30" height="18" fill="none" stroke="url(#logo-grad)" stroke-width="8"/>
-    </svg>
-    <h1 style="margin:0;font-family:'Orbitron',sans-serif;color:#00f7ff;">AAR InfraTech</h1>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="logo-mark">
+        <svg width="42" height="42" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#00f7ff"/>
+              <stop offset="100%" stop-color="#15c5ff"/>
+            </linearGradient>
+          </defs>
+          <polygon points="26,102 60,18 94,102" fill="none" stroke="url(#logo-grad)" stroke-width="8" stroke-linejoin="round"/>
+          <rect x="62" y="52" width="30" height="20" fill="none" stroke="url(#logo-grad)" stroke-width="8"/>
+          <rect x="62" y="74" width="30" height="18" fill="none" stroke="url(#logo-grad)" stroke-width="8"/>
+          <line x1="38" y1="84" x2="82" y2="84" stroke="url(#logo-grad)" stroke-width="6"/>
+        </svg>
+      </span>
+      <span class="brand-name">AAR InfraTech</span>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
 </header>
 
 <section class="hero">
-  <h2>Building Tomorrow, Today</h2>
-  <p>Innovative, futuristic construction solutions in Hyderabad. Precision, quality, and trust driven by excellence.</p>
-  <button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Get a Quote</button>
+  <div class="hero-content">
+    <p style="color:#67ebff;font-weight:700;letter-spacing:0.24rem;text-transform:uppercase;margin-bottom:18px;">AAR InfraTech</p>
+    <h2>Engineering the future of Hyderabad infrastructure</h2>
+    <p>Delivering premium commercial, residential, and smart infrastructure projects with precision engineering and sustainable execution.</p>
+    <button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Request a Consultation</button>
+  </div>
 </section>
 
 <section id="services" class="section">
