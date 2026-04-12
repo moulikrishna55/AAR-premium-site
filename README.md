@@ -1,10 +1,10 @@
-# AAR Infra Website
+# AAR InfraTech Website
 
-A modern, futuristic static website for AAR Infra, a leading construction company in Hyderabad, India.
+A modern, futuristic static website for AAR InfraTech, a leading construction company in Hyderabad, India.
 
 ## About
 
-This website showcases the services, projects, and contact information for AAR Infra, owned by ANIL RAJU ANIPE.
+This website showcases the services, projects, and contact information for AAR InfraTech, owned by ANIL RAJU ANIPE.
 
 **Tagline:** Building Tomorrow, Today
 
