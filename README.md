@@ -1,70 +1,48 @@
 # AAR InfraTech Website
 
-A modern, futuristic static website for AAR InfraTech, a leading construction company in Hyderabad, India.
+A static HTML/CSS/JavaScript website for AAR InfraTech, built from the latest production ZIP design.
 
 ## About
 
-This website showcases the services, projects, and contact information for AAR InfraTech, owned by ANIL RAJU ANIPE.
+This project is now replaced with the provided ZIP content and uses the current AAR InfraTech design. The site is a static landing page for a premium construction business in Hyderabad.
 
-**Tagline:** Building Tomorrow, Today
+## Project Contents
 
-**Contact:** +91 9100320063
+- `index.html` — main landing page
+- `assets/css/main.css` — design styles
+- `assets/js/main.js` — page interactions and slideshow controls
+- `assets/images/` — placeholder image folder for production assets
+- `netlify.toml` — Netlify configuration to publish the repository root
+- `README.txt` — ZIP archive instructions from the provided package
 
-## Features
-
-- Responsive design with futuristic UI
-- SEO optimized with meta tags
-- Sections for Home, Services, Projects, About, and Contact
-- Contact form that sends messages via WhatsApp
-- Sticky navigation and smooth scrolling
-- Futuristic SVG logo
-
-## Tech Stack
-
-- HTML5
-- CSS3
-- JavaScript (vanilla)
-- Google Fonts (Orbitron and Poppins)
-
-## Getting Started
+## Running Locally
 
 ### Prerequisites
 
 - A web browser
 
-### Running Locally
-
-1. Open `index.html` in your web browser.
-
-Or use a local server:
+### Serve the site
 
 ```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve .
-
-# Then open http://localhost:8000
+npx http-server . -p 8000
 ```
 
-## Logo
+Then open:
 
-The logo is a custom SVG featuring a stylized skyscraper with cyan-to-blue gradient.
+```bash
+http://127.0.0.1:8000
+```
 
 ## Deployment
 
-The production-ready files are in the `dist` folder. Upload `dist/index.html` and `dist/assets/` to your hosting provider.
+This is a static site and can be deployed to services like Netlify, Vercel, or Cloudflare Pages.
 
-For local testing of production build:
-```bash
-npm run preview
-```
+Because the site is now served from the repository root, the `netlify.toml` file ensures Netlify publishes the current `index.html`.
 
-Or serve the dist folder:
-```bash
-npx serve dist
-```
+## Notes
+
+- If you want to replace the placeholder images, place your production images in `assets/images/` and update the image URLs.
+- The project no longer requires Node.js dependencies for deployment.
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([
