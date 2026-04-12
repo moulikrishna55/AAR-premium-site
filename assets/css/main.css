@@ -665,8 +665,8 @@ section {
 .lead-form textarea,
 .lead-form select {
   width: 100%;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  background: rgba(255,255,255,0.12);
   color: var(--text);
   border-radius: 14px;
   padding: 14px 16px;
@@ -686,9 +686,12 @@ section {
 }
 
 .lead-form input::placeholder,
-.lead-form textarea::placeholder,
+.lead-form textarea::placeholder {
+  color: rgba(246, 241, 232, 0.72);
+}
+
 .lead-form select option {
-  color: rgba(192, 183, 166, 0.5);
+  color: var(--text);
   background: var(--bg);
 }
 
