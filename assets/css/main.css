@@ -1137,10 +1137,21 @@ section {
   flex-direction: column;
   gap: 12px;
   pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .floating-actions a {
   pointer-events: auto;
+}
+
+.floating-actions.is-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+.floating-actions.is-hidden a {
+  pointer-events: none;
 }
 
 .floating-btn {
@@ -1233,7 +1244,7 @@ footer {
 
   header {
     height: auto;
-    padding: 14px 0;
+    padding: 12px 0;
   }
 
   .nav-wrap,
@@ -1242,8 +1253,48 @@ footer {
     align-items: flex-start;
   }
 
+  .nav-wrap {
+    gap: 16px;
+  }
+
+  .brand {
+    width: 100%;
+  }
+
+  .brand-logo-shell {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
+  }
+
+  .brand-logo {
+    width: 49px;
+    height: 49px;
+  }
+
+  .brand-title {
+    gap: 2px;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  .brand-tagline {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+  }
+
   nav {
+    width: 100%;
+    justify-content: space-between;
     gap: 18px;
+  }
+
+  nav a {
+    font-size: 0.82rem;
+    letter-spacing: 0.07em;
   }
 
   .hero {
@@ -1263,25 +1314,52 @@ footer {
   }
 
   .hero-grid {
-  position: relative;
+    position: relative;
     min-height: auto;
+    border-radius: 30px;
   }
 
   .hero-copy {
-    padding: 54px 26px 38px;
+    padding: 42px 24px 34px;
   }
 
   .hero-panel {
-    min-height: 420px;
-    order: -1;
+    min-height: 360px;
   }
 
   .hero-property-card {
     top: auto;
     right: 18px;
-    bottom: 110px;
+    bottom: 96px;
     left: 18px;
     width: auto;
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .hero-property-card strong {
+    font-size: 1.6rem;
+  }
+
+  .slide-caption {
+    right: 18px;
+    bottom: 20px;
+    left: 18px;
+    gap: 6px;
+  }
+
+  .slide-title {
+    max-width: 380px;
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+  }
+
+  .slide-dots {
+    top: 18px;
+    left: 18px;
+  }
+
+  .parallax-line {
+    bottom: 14%;
   }
 
   .stat {
@@ -1306,26 +1384,93 @@ footer {
   .cta-band {
     padding: 26px;
   }
+
+  .showcase-visual {
+    min-height: 380px;
+  }
+
+  .showcase-overlay-card {
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    max-width: none;
+    padding: 20px;
+  }
+
+  .showcase-overlay-card strong {
+    font-size: 1.7rem;
+  }
+
+  .floating-btn {
+    min-height: 52px;
+  }
 }
 
 @media (max-width: 560px) {
   body {
-    padding-bottom: 90px;
+    padding-bottom: calc(44px + env(safe-area-inset-bottom, 0px));
   }
 
   .floating-actions {
     right: 12px;
-    left: 12px;
-    bottom: 12px;
+    left: auto;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   }
 
   .floating-btn {
-    width: 100%;
+    width: 52px;
+    min-width: 52px;
+    height: 52px;
+    min-height: 52px;
     justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: 0 14px 28px rgba(22, 15, 8, 0.2);
+  }
+
+  .floating-btn span:last-child {
+    display: none;
   }
 
   .container {
     width: min(var(--container), calc(100% - 20px));
+  }
+
+  .nav-wrap {
+    gap: 14px;
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-logo-shell {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+  }
+
+  .brand-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand-name {
+    font-size: 0.94rem;
+    letter-spacing: 0.1em;
+  }
+
+  .brand-tagline {
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+  }
+
+  nav {
+    gap: 12px 14px;
+  }
+
+  nav a {
+    font-size: 0.76rem;
   }
 
   .hero-title,
@@ -1333,21 +1478,54 @@ footer {
   .showcase-panel h2,
   .contact-card h2,
   .editorial-copy h2 {
-    font-size: clamp(2.8rem, 13vw, 4rem);
+    font-size: clamp(2.35rem, 11vw, 3.4rem);
+  }
+
+  .hero-copy {
+    padding: 36px 20px 30px;
+  }
+
+  .eyebrow,
+  .section-label,
+  .property-label,
+  .metric-label,
+  .slide-kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-description,
+  .section-head p,
+  .showcase-panel p,
+  .contact-card p,
+  .editorial-copy p,
+  .metric-panel p,
+  .experience-card p,
+  .cta-meta p {
+    font-size: 0.95rem;
+    line-height: 1.72;
   }
 
   .hero-actions {
     flex-direction: column;
+    margin-top: 28px;
   }
 
   .hero-trust {
     flex-direction: column;
   }
 
+  .hero-trust span {
+    width: 100%;
+    text-align: center;
+  }
+
   .btn,
   .btn-outline {
     width: 100%;
     min-width: 0;
+    padding: 15px 20px;
+    font-size: 0.86rem;
   }
 
   .slide-caption,
@@ -1357,7 +1535,379 @@ footer {
   }
 
   .slide-title {
-    max-width: 260px;
+    max-width: 250px;
+  }
+
+  .hero-panel {
+    min-height: 320px;
+  }
+
+  .hero-property-card {
+    right: 14px;
+    bottom: 82px;
+    left: 14px;
+    padding: 16px;
+  }
+
+  .hero-property-card strong {
+    font-size: 1.4rem;
+  }
+
+  .property-meta {
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .property-meta span {
+    padding: 8px 10px;
+    font-size: 0.72rem;
+  }
+
+  .stats {
+    margin-top: 34px;
+    padding-top: 22px;
+    gap: 18px;
+  }
+
+  .stat strong {
+    font-size: 2rem;
+  }
+
+  .stat span {
+    max-width: none;
+    font-size: 0.9rem;
+  }
+
+  .marquee-band span {
+    padding: 15px 14px;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+
+  .editorial-grid,
+  .showcase-panel,
+  .contact-card,
+  .metric-panel,
+  .card,
+  .experience-card,
+  .cta-band {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .editorial-grid {
+    gap: 18px;
+  }
+
+  .editorial-quote {
+    padding: 22px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(229, 200, 154, 0.28);
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+  }
+
+  .showcase-visual {
+    min-height: 320px;
+    border-radius: 24px;
+  }
+
+  .showcase-overlay-card {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    padding: 18px;
+  }
+
+  .showcase-overlay-card strong {
+    font-size: 1.5rem;
+  }
+
+  .form-row {
+    gap: 12px;
+  }
+
+  .lead-form input,
+  .lead-form textarea,
+  .lead-form select {
+    border-radius: 16px;
+    padding: 14px;
+  }
+
+  .cta-band {
+    gap: 18px;
+  }
+
+  .cta-copy h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .floating-actions {
+    gap: 10px;
+  }
+
+  .floating-btn {
+    font-size: 0.84rem;
+  }
+
+  .footer-row {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 0;
+  }
+
+  .nav-wrap {
+    gap: 12px;
+  }
+
+  .brand {
+    align-items: center;
+  }
+
+  nav {
+    gap: 10px 12px;
+  }
+
+  nav a {
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+  }
+
+  .hero {
+    padding-top: 12px;
+  }
+
+  .hero-grid {
+    border-radius: 24px;
+  }
+
+  .hero-copy {
+    padding: 34px 18px 28px;
+  }
+
+  .hero-title {
+    line-height: 0.98;
+  }
+
+  .hero-description {
+    margin-top: 18px;
+  }
+
+  .hero-panel {
+    min-height: 304px;
+  }
+
+  .slide-caption,
+  .slide-dots {
+    left: 14px;
+    right: 14px;
+  }
+
+  .slide-dots {
+    top: 14px;
+  }
+
+  .slide-title {
+    max-width: 230px;
+    font-size: 1.62rem;
+  }
+
+  .hero-property-card {
+    right: 12px;
+    bottom: 76px;
+    left: 12px;
+    padding: 14px;
+  }
+
+  .hero-property-card strong {
+    font-size: 1.28rem;
+  }
+
+  .property-meta span {
+    font-size: 0.68rem;
+  }
+
+  .stats {
+    gap: 16px;
+  }
+
+  .marquee-band span {
+    padding: 14px 12px;
+  }
+
+  .showcase-visual {
+    min-height: 296px;
+  }
+
+  .showcase-overlay-card {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    padding: 16px;
+  }
+
+  .showcase-overlay-card strong {
+    font-size: 1.34rem;
+  }
+
+  .lead-form {
+    gap: 12px;
+  }
+
+  .floating-btn {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: min(var(--container), calc(100% - 16px));
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-title {
+    max-width: calc(100% - 64px);
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+  }
+
+  .brand-tagline {
+    font-size: 0.54rem;
+    letter-spacing: 0.14em;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  nav a {
+    font-size: 0.72rem;
+  }
+
+  .hero-title,
+  .section-head h2,
+  .showcase-panel h2,
+  .contact-card h2,
+  .editorial-copy h2 {
+    font-size: clamp(2rem, 10.2vw, 2.7rem);
+  }
+
+  .hero-description,
+  .section-head p,
+  .showcase-panel p,
+  .contact-card p,
+  .editorial-copy p,
+  .metric-panel p,
+  .experience-card p,
+  .cta-meta p,
+  .form-note {
+    font-size: 0.9rem;
+    line-height: 1.68;
+  }
+
+  .hero-copy {
+    padding: 32px 18px 28px;
+  }
+
+  .hero-panel {
+    min-height: 300px;
+  }
+
+  .slide-title {
+    max-width: 220px;
+    font-size: 1.55rem;
+  }
+
+  .hero-property-card {
+    bottom: 72px;
+  }
+
+  .hero-property-card strong,
+  .showcase-overlay-card strong {
+    font-size: 1.3rem;
+  }
+
+  .property-meta span,
+  .hero-trust span {
+    font-size: 0.68rem;
+  }
+
+  .card,
+  .metric-panel,
+  .experience-card,
+  .showcase-panel,
+  .contact-card,
+  .cta-band,
+  .editorial-grid {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  nav {
+    gap: 8px 10px;
+  }
+
+  nav a {
+    font-size: 0.69rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title,
+  .section-head h2,
+  .showcase-panel h2,
+  .contact-card h2,
+  .editorial-copy h2 {
+    font-size: clamp(1.88rem, 9.6vw, 2.45rem);
+  }
+
+  .hero-panel {
+    min-height: 284px;
+  }
+
+  .slide-title {
+    max-width: 190px;
+    font-size: 1.42rem;
+  }
+
+  .hero-property-card {
+    right: 10px;
+    bottom: 68px;
+    left: 10px;
+    padding: 12px;
+  }
+
+  .hero-property-card strong,
+  .showcase-overlay-card strong {
+    font-size: 1.18rem;
+  }
+
+  .property-meta {
+    gap: 5px;
+  }
+
+  .property-meta span,
+  .hero-trust span {
+    padding-left: 9px;
+    padding-right: 9px;
+    font-size: 0.64rem;
+  }
+
+  .floating-actions {
+    right: 10px;
+    left: auto;
   }
 }
 
