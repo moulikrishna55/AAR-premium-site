@@ -1,4 +1,3 @@
-
 (function () {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealElements = document.querySelectorAll('.reveal');
@@ -34,7 +33,7 @@
       const message = document.getElementById('leadMessage')?.value.trim() || '';
 
       const whatsappMessage = [
-        'Hello AAR INFRA TECH, I am interested in your services.',
+        'Hello AAR INFRA TECH, I would like to discuss a construction or interior project.',
         '',
         `Name: ${name}`,
         `Phone: ${phone}`,
