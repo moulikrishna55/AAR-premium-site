@@ -7,10 +7,11 @@
   <meta name="description" content="AAR INFRA TECH delivers premium construction, interiors, renovations, and commercial spaces with a polished, client-first experience." />
   <meta name="theme-color" content="#11100d" />
   <meta name="format-detection" content="telephone=no" />
+  <meta name="color-scheme" content="light" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/main.css?v=3" />
+  <link rel="stylesheet" href="assets/css/main.css?v=4" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -38,7 +39,12 @@
           <span class="brand-tagline">Premium Construction and Interiors</span>
         </div>
       </a>
-      <nav aria-label="Primary navigation">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primaryNav" aria-label="Primary navigation">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#projects">Standard</a>
@@ -254,11 +260,11 @@
             <div class="form-row">
               <label>
                 Full Name
-                <input type="text" id="leadName" name="name" placeholder="Your full name" required />
+                <input type="text" id="leadName" name="name" placeholder="Your full name" autocomplete="name" required />
               </label>
               <label>
                 Phone Number
-                <input type="tel" id="leadPhone" name="phone" placeholder="Your phone number" required />
+                <input type="tel" id="leadPhone" name="phone" placeholder="Your phone number" autocomplete="tel" inputmode="tel" required />
               </label>
             </div>
             <div class="form-row">
@@ -274,7 +280,7 @@
               </label>
               <label>
                 Project Location
-                <input type="text" id="leadLocation" name="location" placeholder="Area / locality" required />
+                <input type="text" id="leadLocation" name="location" placeholder="Area / locality" autocomplete="address-level2" required />
               </label>
             </div>
             <label>

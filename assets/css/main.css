@@ -137,6 +137,8 @@ header {
   gap: 14px;
   min-width: 0;
   text-decoration: none;
+  position: relative;
+  z-index: 1002;
 }
 
 .brand-logo-shell {
@@ -202,6 +204,57 @@ nav {
   align-items: center;
   gap: 28px;
   flex-wrap: wrap;
+}
+
+.menu-toggle {
+  display: none;
+  position: relative;
+  z-index: 1002;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 1px solid rgba(132, 102, 70, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 250, 244, 0.88);
+  box-shadow: 0 10px 24px rgba(51, 37, 21, 0.08);
+  color: #241c15;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  position: absolute;
+  left: 13px;
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+  top: 17px;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 24px;
+}
+
+.menu-toggle span:nth-child(3) {
+  top: 31px;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  top: 24px;
+  transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  top: 24px;
+  transform: rotate(-45deg);
 }
 
 nav a {
@@ -451,6 +504,10 @@ section {
   perspective: 1200px;
   transform-style: preserve-3d;
   background: #090807;
+}
+
+.hero-panel.is-interactive {
+  cursor: grab;
 }
 
 .hero-panel::before {
@@ -1261,6 +1318,13 @@ footer {
     width: 100%;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
   .brand-logo-shell {
     width: 58px;
     height: 58px;
@@ -1287,14 +1351,36 @@ footer {
   }
 
   nav {
-    width: 100%;
-    justify-content: space-between;
-    gap: 18px;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 20px;
+    left: 20px;
+    display: grid;
+    gap: 10px;
+    padding: 18px;
+    border: 1px solid rgba(132, 102, 70, 0.14);
+    border-radius: 24px;
+    background: rgba(250, 244, 236, 0.96);
+    box-shadow: 0 24px 40px rgba(36, 25, 13, 0.12);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
+  }
+
+  header.nav-open nav {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 
   nav a {
     font-size: 0.82rem;
     letter-spacing: 0.07em;
+    padding: 10px 2px;
   }
 
   .hero {
@@ -1442,6 +1528,7 @@ footer {
 
   .brand {
     gap: 12px;
+    width: calc(100% - 64px);
   }
 
   .brand-logo-shell {
@@ -1466,7 +1553,9 @@ footer {
   }
 
   nav {
-    gap: 12px 14px;
+    right: 10px;
+    left: 10px;
+    padding: 16px;
   }
 
   nav a {
@@ -1776,6 +1865,34 @@ footer {
 
   .brand-title {
     max-width: calc(100% - 64px);
+  }
+
+  .menu-toggle {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .menu-toggle span {
+    left: 12px;
+    width: 20px;
+  }
+
+  .menu-toggle span:nth-child(1) {
+    top: 15px;
+  }
+
+  .menu-toggle span:nth-child(2) {
+    top: 22px;
+  }
+
+  .menu-toggle span:nth-child(3) {
+    top: 29px;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(1),
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    top: 22px;
   }
 
   .brand-name {
