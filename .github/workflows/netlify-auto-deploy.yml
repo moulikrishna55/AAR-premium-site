@@ -1,0 +1,26 @@
+name: Netlify Auto Deploy
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Trigger Netlify Deploy
+        run: npx -y @netlify/mcp@latest --site-id "$NETLIFY_SITE_ID" --proxy-path "$NETLIFY_MCP_PROXY_PATH" --no-wait
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_MCP_PROXY_PATH: ${{ secrets.NETLIFY_MCP_PROXY_PATH }}
