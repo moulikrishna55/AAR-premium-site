@@ -139,13 +139,29 @@ header {
   text-decoration: none;
 }
 
+.brand-logo-shell {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  flex: 0 0 auto;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 240, 215, 0.08), transparent 26%),
+    linear-gradient(180deg, rgba(18, 15, 12, 0.98), rgba(30, 24, 18, 0.94));
+  border: 1px solid rgba(181, 135, 74, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 14px 30px rgba(53, 35, 16, 0.18);
+}
+
 .brand-logo {
   width: 60px;
   height: 60px;
   flex: 0 0 auto;
   filter:
-    drop-shadow(0 0 6px rgba(247, 229, 195, 0.18))
-    drop-shadow(0 10px 22px rgba(90, 56, 22, 0.24));
+    drop-shadow(0 0 8px rgba(255, 235, 198, 0.22))
+    drop-shadow(0 12px 24px rgba(0, 0, 0, 0.24));
 }
 
 .brand-title {
