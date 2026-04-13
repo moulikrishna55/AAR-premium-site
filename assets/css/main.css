@@ -1271,6 +1271,10 @@ footer {
 }
 
 @media (max-width: 1100px) {
+  .hero-copy {
+    padding: 68px 42px 46px;
+  }
+
   .hero-grid,
   .showcase,
   .contact-grid,
@@ -1286,11 +1290,34 @@ footer {
   }
 
   .hero-panel {
-    min-height: 580px;
+    min-height: 500px;
   }
 
   .marquee-band {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 960px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 22px;
+    max-width: none;
+  }
+
+  .stat:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .stat:not(:last-child)::after {
+    display: none;
+  }
+
+  .showcase-panel,
+  .contact-card,
+  .cta-band,
+  .editorial-grid {
+    padding: 30px;
   }
 }
 
@@ -1304,18 +1331,22 @@ footer {
     padding: 12px 0;
   }
 
-  .nav-wrap,
+  .nav-wrap {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+
   .footer-row {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .nav-wrap {
-    gap: 16px;
-  }
-
   .brand {
-    width: 100%;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .menu-toggle {
@@ -1413,6 +1444,10 @@ footer {
     min-height: 360px;
   }
 
+  .hero-description {
+    line-height: 1.76;
+  }
+
   .hero-property-card {
     top: auto;
     right: 18px;
@@ -1475,6 +1510,11 @@ footer {
     min-height: 380px;
   }
 
+  .cta-copy,
+  .cta-meta {
+    align-items: stretch;
+  }
+
   .showcase-overlay-card {
     right: 18px;
     bottom: 18px;
@@ -1489,6 +1529,33 @@ footer {
 
   .floating-btn {
     min-height: 52px;
+  }
+}
+
+@media (max-width: 680px) {
+  .marquee-band {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid,
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    padding: 38px 20px 30px;
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .showcase-visual {
+    min-height: 340px;
   }
 }
 
@@ -1528,7 +1595,7 @@ footer {
 
   .brand {
     gap: 12px;
-    width: calc(100% - 64px);
+    flex: 1 1 auto;
   }
 
   .brand-logo-shell {
@@ -1656,6 +1723,10 @@ footer {
     margin-top: 34px;
     padding-top: 22px;
     gap: 18px;
+  }
+
+  .stat:last-child {
+    grid-column: auto;
   }
 
   .stat strong {
