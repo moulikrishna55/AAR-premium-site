@@ -142,26 +142,26 @@ header {
 .brand-logo-shell {
   display: grid;
   place-items: center;
-  width: 68px;
-  height: 68px;
+  width: 64px;
+  height: 64px;
   flex: 0 0 auto;
-  border-radius: 22px;
+  border-radius: 20px;
   background:
-    radial-gradient(circle at 30% 24%, rgba(255, 240, 215, 0.08), transparent 26%),
-    linear-gradient(180deg, rgba(18, 15, 12, 0.98), rgba(30, 24, 18, 0.94));
-  border: 1px solid rgba(181, 135, 74, 0.22);
+    radial-gradient(circle at 30% 24%, rgba(255, 247, 232, 0.24), transparent 30%),
+    linear-gradient(180deg, rgba(238, 227, 211, 0.98), rgba(226, 212, 194, 0.96));
+  border: 1px solid rgba(156, 113, 58, 0.24);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 14px 30px rgba(53, 35, 16, 0.18);
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 8px 18px rgba(79, 55, 30, 0.1);
 }
 
 .brand-logo {
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
   flex: 0 0 auto;
+  display: block;
   filter:
-    drop-shadow(0 0 8px rgba(255, 235, 198, 0.22))
-    drop-shadow(0 12px 24px rgba(0, 0, 0, 0.24));
+    drop-shadow(0 2px 8px rgba(99, 67, 35, 0.08));
 }
 
 .brand-title {
